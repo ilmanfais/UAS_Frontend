@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSurahs } from "../../services/quran";
 import useDebounce from "../../hooks/useDebounce";
 import fuzzySearch from "../../lib/fuzzySearch";
 import Input from "../../components/Input";
-import IconQuranCalligraphy from "../../components/icons/IconQuranCalligraphy";
+import Lottie from "lottie-web";
+import animationData from "../../assets/quran.json";
+import { FaSearch } from "react-icons/fa";
 
 const AyahCard = ({ number, name, translation, revelation, numberOfAyahs }) => {
   return (
@@ -63,6 +65,22 @@ const Quran = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const debouncedSearchKeyword = useDebounce(searchKeyword);
 
+  useEffect(() => {
+    // Initialize Lottie animation
+    const lottieContainer = document.getElementById("lottie-container");
+    const animation = Lottie.loadAnimation({
+      container: lottieContainer,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+    });
+
+    return () => {
+      animation.destroy();
+    };
+  }, []);
+
   const filteredSurahs = surahsQuery.data
     ? [
         ...surahsQuery.data.filter((surah) =>
@@ -75,22 +93,32 @@ const Quran = () => {
     : [];
 
   return (
-    <div className="w-full flex flex-col gap-4 justify-center items-center">
+    <div className="w-full flex flex-col gap-4 justify-center items-center mb-10">
       {surahsQuery.isLoading ? (
         <SkeletonAyahCard />
       ) : (
         <>
-          <div className="max-w-[200px] w-full my-8">
-            <IconQuranCalligraphy />
+          <div>
+            <div>
+              <p className="text-lg font-semibold text-center text-gray-600 ">
+                Al-Quran menenangkan hati yang sakit dan memberi tahu kita bahwa{" "}
+                <br></br>Allah lebih dekat dengan kita daripada urat leher kita.
+              </p>
+            </div>
           </div>
+          <div className="max-w-[200px] w-full my-8" id="lottie-container" />
           <div className="max-w-sm">
-            <Input
-              value={searchKeyword}
-              type="search"
-              name="search"
-              placeholder="Yasin"
-              onChange={(e) => setSearchKeyword(e.target.value)}
-            />
+            <div className="max-w-sm flex items-center">
+              <Input
+                value={searchKeyword}
+                type="search"
+                name="search"
+                placeholder="Al-Kahfi"
+                onChange={(e) => setSearchKeyword(e.target.value)}
+                className="mr-2"
+              />
+              <FaSearch className="ml-4" />
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center w-full">
             {filteredSurahs.length ? (

@@ -3,14 +3,11 @@ import { createContext, useReducer, useEffect, useContext } from "react";
 const initialState = (typeof window !== "undefined" &&
   JSON.parse(localStorage.getItem("bookmark"))) || {
   ayahs: [],
-  hadiths: [],
 };
 
 const actionTypes = {
   ADD_BOOKMARK_AYAH: "ADD_BOOKMARK_AYAH",
   REMOVE_BOOKMARK_AYAH: "REMOVE_BOOKMARK_AYAH",
-  ADD_BOOKMARK_HADITH: "ADD_BOOKMARK_HADITH",
-  REMOVE_BOOKMARK_HADITH: "REMOVE_BOOKMARK_HADITH",
 };
 
 const BookMarkContext = createContext();
@@ -27,20 +24,6 @@ const bookmarkReducer = (state, action) => {
         ...state,
         ayahs: state.ayahs.filter(
           (ayah) => ayah.number.inQuran !== action.payload
-        ),
-      };
-    case actionTypes.ADD_BOOKMARK_HADITH:
-      return {
-        ...state,
-        hadiths: state.hadiths.concat(action.payload),
-      };
-    case actionTypes.REMOVE_BOOKMARK_HADITH:
-      return {
-        ...state,
-        hadiths: state.hadiths.filter(
-          (hadith) =>
-            hadith.number !== action.payload.number ||
-            hadith.slug !== action.payload.slug
         ),
       };
     default:

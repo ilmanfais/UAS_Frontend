@@ -73,8 +73,6 @@ const MyLocation = () => {
   );
 };
 
-// jakarta
-
 const now = new Date();
 const currentDate = now.getDate();
 
@@ -116,7 +114,7 @@ const PrayerTableSkeleton = () => {
 const PrayerTimeTable = ({ prayers }) => {
   return (
     <div className="w-full overflow-auto">
-      <table className="border-collapse whitespace-nowrap w-full">
+      <table className="border-collapse whitespace-nowrap w-full mb-10">
         <thead className="bg-slate-100">
           <tr>
             <th className="border px-4 py-3 capitalize">Tanggal</th>

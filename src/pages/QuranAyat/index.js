@@ -94,7 +94,7 @@ const QuranAyat = () => {
   const { hasBookmarkedAyah, toggleBookmarkAyah } = useBookmarkAyah();
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-10">
       {surahQuery.isLoading ? (
         <Skeleton />
       ) : (

@@ -3,7 +3,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { useSurah } from "../../services/quran";
 import { usePreference } from "../../context/Preference";
 import useToggle from "../../hooks/useToggle";
-import ModalPreference from "./ModalPreference";
+import ModalPreference from "./ModalPreference"
 import ContentSimple from "./ContentSimple";
 import ContentFull from "./ContentFull";
 import ContentHeader from "./ContentHeader";
@@ -181,7 +181,7 @@ const Surah = () => {
   }, [onEndAudioHandler, onPlayAudioHandler]);
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-10">
       {surahQuery.isLoading ? (
         <Skeleton />
       ) : (
