@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Ilman from '../../assets/faisilman.jpg';
+import Arya from '../../assets/arya.jpg';
+import Dani from '../../assets/Dani.jpg';
 
 const AboutUs = () => {
   return (
@@ -12,7 +14,7 @@ const AboutUs = () => {
         <img
           src={Ilman}
           alt="Description of the image"
-          className="w-80 h-80 rounded-full border-8 border-gray-300"
+          className="w-80 h-80 rounded-full border-8 border-gray-800"
         />
       </div>
       <div className="lg:w-3/4 mt-8">
@@ -20,73 +22,63 @@ const AboutUs = () => {
         <p className="mb-4">
           Hello, I'm Ilman, a dedicated full-stack developer passionate about crafting seamless digital experiences. With expertise in both front-end and back-end technologies, I thrive on transforming innovative ideas into functional and user-friendly solutions. Let's build something amazing together!
         </p>
-        <p>
-          Let's build something amazing together!
-        </p>
-        {/* Tambahkan di sini icon untuk github intagram dan wathsapp */}
         <div className="flex gap-4 mt-4">
-            <a href="#github-link">
+            <a href="https://github.com/ilmanfais">
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <a href="#instagram-link">
+            <a href="https://www.instagram.com/_ilmanfais/">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
-            <a href="#whatsapp-link">
-              <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+            <a href="https://www.linkedin.com/in/ilmaannn/">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
         </div>
       </div>
       <div className='mb-8'>
         <img
-          src={Ilman}
+          src={Dani}
           alt="Description of the image"
-          className="w-80 h-80 rounded-full border-8 border-gray-300"
+          className="w-80 h-80 rounded-full border-8 border-gray-800"
         />
       </div>
       <div className="lg:w-3/4 mt-8">
         <h1 className="text-3xl font-bold mb-4">Rio Aditya Ramadhani</h1>
         <p className="mb-4">
-          Hello, I'm Ilman, a dedicated full-stack developer passionate about crafting seamless digital experiences. With expertise in both front-end and back-end technologies, I thrive on transforming innovative ideas into functional and user-friendly solutions. Let's build something amazing together!
-        </p>
-        <p>
-          Let's build something amazing together!
+        Hi, I'm Rio, a dedicated full-stack developer with expertise in both front-end and back-end technologies. I excel at turning innovative ideas into user-friendly solutions. Proficient in JavaScript, Python, and Java, I design captivating interfaces and manage server-side operations efficiently. Known for creativity and problem-solving, I bring valuable skills to IT projects. Let's collaborate and create something amazing!
         </p>
         <div className="flex gap-4 mt-4">
-            <a href="#github-link">
+            <a href="https://github.com/Riodhani23">
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <a href="#instagram-link">
+            <a href="https://www.instagram.com/rioadtyramdhan_/">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
-            <a href="#whatsapp-link">
-              <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+            <a href="https://www.linkedin.com/in/rioo/">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
         </div>
       </div>
       <div className='mb-8'>
         <img
-          src={Ilman}
+          src={Arya}
           alt="Description of the image"
-          className="w-80 h-80 rounded-full border-8 border-gray-300"
+          className="w-80 h-80 rounded-full border-8 border-gray-800"
         />
       </div>
       <div className="lg:w-3/4 mt-8">
         <h1 className="text-3xl font-bold mb-4">Aryadi Sumantri</h1>
         <p className="mb-4">
-          Hello, I'm Ilman, a dedicated full-stack developer passionate about crafting seamless digital experiences. With expertise in both front-end and back-end technologies, I thrive on transforming innovative ideas into functional and user-friendly solutions. Let's build something amazing together!
-        </p>
-        <p>
-          Let's build something amazing together!
+        Hi, I'm Arya, a skilled React developer passionate about crafting engaging user interfaces. With a strong focus on front-end technologies, I excel in creating seamless and visually appealing digital experiences. My expertise lies in leveraging React to build dynamic and responsive web applications. Let's bring your ideas to life with captivating React solutions!
         </p>
         <div className="flex gap-4 mt-4">
-            <a href="#github-link">
+            <a href="https://github.com/sumantri29">
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <a href="#instagram-link">
+            <a href="https://www.instagram.com/comprokpo/">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
-            <a href="#whatsapp-link">
-              <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+            <a href="http://www.linkedin.com/in/coprokpo-arya-183915290">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
         </div>
       </div>

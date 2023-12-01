@@ -3,10 +3,10 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { useSurah } from "../../services/quran";
 import { usePreference } from "../../context/Preference";
 import useToggle from "../../hooks/useToggle";
-import ModalPreference from "./ModalPreference"
 import ContentSimple from "./ContentSimple";
 import ContentFull from "./ContentFull";
 import ContentHeader from "./ContentHeader";
+import ModalPreference from "./ModalPreference"
 import Title from "./Title";
 import Audio from "../../components/Audio";
 
@@ -61,27 +61,27 @@ const Skeleton = () => {
       {i === 0 && (
         <>
           <div className="flex w-full justify-center flex-col items-center gap-2">
-            <div className="h-8 bg-slate-200 w-full max-w-[160px] rounded-md"></div>
-            <div className="h-6 bg-slate-200 w-full max-w-[100px] rounded-md"></div>
+            <div className="h-8 bg-gray-200 w-full max-w-[160px] rounded-md"></div>
+            <div className="h-6 bg-gray-200 w-full max-w-[100px] rounded-md"></div>
           </div>
           <div className="flex w-full justify-between items-center border-b pb-2 flex-col gap-1 sm:flex-row">
-            <span className="h-6 w-[220px] bg-slate-200 rounded-md"></span>
-            <span className="h-8 w-[140px] bg-slate-200 rounded-md"></span>
+            <span className="h-6 w-[220px] bg-gray-200 rounded-md"></span>
+            <span className="h-8 w-[140px] bg-gray-200 rounded-md"></span>
           </div>
         </>
       )}
       <div className="border-b p-6 flex flex-col gap-6 w-full">
         <div className="flex justify-between items-center gap-4">
-          <span className="h-8 w-[60px] bg-slate-200 rounded-md"></span>
-          <span className="h-6 w-[100px] bg-slate-200 rounded-md"></span>
+          <span className="h-8 w-[60px] bg-gray-200 rounded-md"></span>
+          <span className="h-6 w-[100px] bg-gray-200 rounded-md"></span>
         </div>
-        <span className="h-8 w-3/4 bg-slate-200 rounded-md self-end"></span>
-        <span className="h-8 w-3/4 bg-slate-200 rounded-md"></span>
+        <span className="h-8 w-3/4 bg-gray-200 rounded-md self-end"></span>
+        <span className="h-8 w-3/4 bg-gray-200 rounded-md"></span>
         <div className="flex gap-2 flex-col">
-          <span className="h-8 w-1/4 bg-slate-200 rounded-md self-center"></span>
-          <span className="h-6 w-full bg-slate-200 rounded-md"></span>
-          <span className="h-6 w-full bg-slate-200 rounded-md"></span>
-          <span className="h-6 w-full bg-slate-200 rounded-md"></span>
+          <span className="h-8 w-1/4 bg-gray-200 rounded-md self-center"></span>
+          <span className="h-6 w-full bg-gray-200 rounded-md"></span>
+          <span className="h-6 w-full bg-gray-200 rounded-md"></span>
+          <span className="h-6 w-full bg-gray-200 rounded-md"></span>
         </div>
       </div>
     </div>
@@ -182,6 +182,7 @@ const Surah = () => {
 
   return (
     <div className="w-full mb-10">
+      <h1 className="text-4xl font-bold mb-8 text-center">Surah Qur'an</h1>
       {surahQuery.isLoading ? (
         <Skeleton />
       ) : (

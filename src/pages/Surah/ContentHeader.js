@@ -26,7 +26,7 @@ const ContentHeader = ({
         <button
           onClick={onClickPlay}
           className={`group relative p-2 flex gap-2 text-sm font-medium items-center justify-center hover:bg-gray-100 transition rounded-lg ${
-            isPlaying ? " bg-blue-100 text-primary" : ""
+            isPlaying ? " bg-gray-100 text-gray-800" : ""
           }`}
         >
           <div className="hidden whitespace-nowrap absolute -top-9 py-1 px-2 transition-all rounded-md bg-black text-white group-hover:block after:h-2 after:w-2 after:-ml-[4px] after:absolute after:left-[50%] after:rotate-[-135deg] after:bg-black after:-bottom-1 after:rounded-t-[2px]">

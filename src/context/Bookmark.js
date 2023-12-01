@@ -88,38 +88,4 @@ const useBookmarkAyah = () => {
   };
 };
 
-const useBookmarkHadith = () => {
-  const { state, dispatch } = useBookmark();
-
-  const addBookmarkHadith = (hadith) => {
-    dispatch({ type: actionTypes.ADD_BOOKMARK_HADITH, payload: hadith });
-  };
-
-  const removeBookmarkHadith = (hadith) => {
-    dispatch({ type: actionTypes.REMOVE_BOOKMARK_HADITH, payload: hadith });
-  };
-
-  const hasBookmarkHadith = (slug, number) => {
-    return state.hadiths.find(
-      (hadith) => hadith.number === number && hadith.slug === slug
-    );
-  };
-
-  const toggleBookmarkHadith = (hadith) => {
-    if (hasBookmarkHadith(hadith.slug, hadith.number)) {
-      removeBookmarkHadith(hadith);
-    } else {
-      addBookmarkHadith(hadith);
-    }
-  };
-
-  return {
-    hadiths: state.hadiths,
-    addBookmarkHadith,
-    removeBookmarkHadith,
-    hasBookmarkHadith,
-    toggleBookmarkHadith,
-  };
-};
-
-export { BookmarkProvider, useBookmarkAyah, useBookmarkHadith };
+export { BookmarkProvider, useBookmarkAyah, };

@@ -5,17 +5,16 @@ import {
   useLocationGeolocation,
 } from "../../context/Geolocation";
 
-const formatter = (date, options) => {
+
+const format = (date, options) => {
   return Intl.DateTimeFormat("id-ID", options).format(date);
 };
 
 const dateNow = new Date();
-const dateNowStr = formatter(dateNow, { dateStyle: "full" });
+const dateNowStr = format(dateNow, { dateStyle: "full" });
 
-// Asia/Jakarta / Asia/Makasar
 const timeZoneIANA = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-// GMT+7/GMT+8/GMT+9
 const timeZoneGMT = new Intl.DateTimeFormat("en-us", {
   timeZoneName: "short",
 })
@@ -27,7 +26,7 @@ const Clock = () => {
 
   useEffect(() => {
     const myInterval = setInterval(() => {
-      const clock = formatter(new Date(), {
+      const clock = format(new Date(), {
         timeStyle: "medium",
       });
       setClock(clock.split(".").join(" : "));
@@ -114,12 +113,12 @@ const PrayerTableSkeleton = () => {
 const PrayerTimeTable = ({ prayers }) => {
   return (
     <div className="w-full overflow-auto">
-      <table className="border-collapse whitespace-nowrap w-full mb-10">
-        <thead className="bg-slate-100">
+      <table className="border-collapse whitespace-nowrap w-full mb-20">
+        <thead className="bg-gray-800">
           <tr>
-            <th className="border px-4 py-3 capitalize">Tanggal</th>
+            <th className="text-white border px-4 py-3 capitalize">Tanggal</th>
             {Object.keys(prayers[0].time).map((title) => (
-              <th className="border px-4 py-3 capitalize" key={title}>
+              <th className="text-white border px-4 py-3 capitalize" key={title}>
                 {title}
               </th>
             ))}
@@ -131,7 +130,7 @@ const PrayerTimeTable = ({ prayers }) => {
               <td
                 className={`border px-3 py-2 text-sm ${
                   new Date(prayer.date).getDate() === currentDate
-                    ? "bg-slate-200 font-semibold"
+                    ? "bg-gray-100 font-semibold"
                     : ""
                 }`}
               >
@@ -145,7 +144,7 @@ const PrayerTimeTable = ({ prayers }) => {
                   key={`${prayer.date}${time}`}
                   className={`border px-3 py-2 text-sm  ${
                     new Date(prayer.date).getDate() === currentDate
-                      ? "bg-slate-200 font-semibold"
+                      ? "bg-gray-100 font-semibold"
                       : ""
                   }`}
                 >
@@ -275,7 +274,7 @@ const PrayerTime = () => {
 
   return (
     <div className="w-full flex flex-col gap-6 justify-center items-center">
-      <h1 className="text-center text-4xl font-bold">Waktu Sholat</h1>
+      <h1 className="text-center text-4xl font-bold">Prayer Time</h1>
       <MyLocation />
       {geolocation.state.isLoading ? (
         <PrayerTableSkeleton />

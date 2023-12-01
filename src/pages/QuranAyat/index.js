@@ -54,9 +54,9 @@ const Tafsir = ({ mufassirs, tafsir }) => {
         {mufassirs.map((item) => (
           <button
             key={item.value}
-            className={`px-3 py-2 font-medium hover:text-primary transition ${
+            className={`px-3 py-2 font-medium hover:text-gray-800 transition ${
               mufassir === item.value
-                ? "border-b-2 border-b-primary text-primary"
+                ? "border-b-2 border-b-gray-800 text-gray-800"
                 : ""
             }`}
             onClick={() => setMufassir(item.value)}

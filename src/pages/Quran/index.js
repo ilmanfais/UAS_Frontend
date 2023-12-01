@@ -6,20 +6,19 @@ import fuzzySearch from "../../lib/fuzzySearch";
 import Input from "../../components/Input";
 import Lottie from "lottie-web";
 import animationData from "../../assets/quran.json";
-import { FaSearch } from "react-icons/fa";
 
 const AyahCard = ({ number, name, translation, revelation, numberOfAyahs }) => {
   return (
     <Link
       to={`/quran/${number}`}
-      className="border rounded-md p-4 group hover:border-primary hover:bg-slate-50 transition-colors flex gap-4 items-center w-full"
+      className="border rounded-md p-4 bg-gray-200 group hover:border-gray-800 hover:bg-slate-50 transition-colors flex gap-4 items-center w-full"
     >
-      <span className="h-10 max-w-[2.5rem] w-full text-sm bg-slate-200 transition-colors group-hover:bg-primary group-hover:text-white flex items-center justify-center font-semibold rounded-full">
+      <span className="h-10 max-w-[2.5rem] w-full text-sm bg-slate-200 transition-colors group-hover:bg-gray-800 group-hover:text-white flex items-center justify-center font-semibold rounded-full">
         {number}
       </span>
       <div className="flex items-center justify-between w-full">
         <div>
-          <h2 className="text-lg font-semibold transition-colors group-hover:text-primary">
+          <h2 className="text-lg font-semibold transition-colors group-hover:text-gray-800">
             {name}
           </h2>
           <span className="text-sm font-medium text-gray-600">
@@ -93,7 +92,8 @@ const Quran = () => {
     : [];
 
   return (
-    <div className="w-full flex flex-col gap-4 justify-center items-center mb-10">
+    <div className="bg- w-full flex flex-col gap-4 justify-center items-center mb-10">
+      <h1 className="text-4xl font-bold mb-8 text-center">Al-Qur'an</h1>
       {surahsQuery.isLoading ? (
         <SkeletonAyahCard />
       ) : (
@@ -108,19 +108,18 @@ const Quran = () => {
           </div>
           <div className="max-w-[200px] w-full my-8" id="lottie-container" />
           <div className="max-w-sm">
-            <div className="max-w-sm flex items-center">
+            <div className="max-w-sm flex items-start">
               <Input
                 value={searchKeyword}
                 type="search"
                 name="search"
-                placeholder="Al-Kahfi"
+                placeholder="Search"
                 onChange={(e) => setSearchKeyword(e.target.value)}
                 className="mr-2"
               />
-              <FaSearch className="ml-4" />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center w-full mb-10">
             {filteredSurahs.length ? (
               filteredSurahs.map((surah) => (
                 <AyahCard key={surah.number} {...surah} />
